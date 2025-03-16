@@ -1,8 +1,6 @@
 package com.telusko.question_service.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,11 +12,10 @@ import org.springframework.stereotype.Component;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Question")
 public class Question {
 
         @Id
-//        @GeneratedValue(strategy = GenerationType.SEQUENCE)  // something wrong this statement every project
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private int id;
         private String title;
         private String category;

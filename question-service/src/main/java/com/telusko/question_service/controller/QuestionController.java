@@ -55,6 +55,4 @@ public class QuestionController {
         return questionService.getScore(responses);
 
     }
-
-
 }

@@ -24,10 +24,6 @@ public class QuizService {
     @Autowired
     QuizInterface quizInterface;
 
-//    @Autowired
-//    QuestionDao questionDao;
-
-
     public ResponseEntity<String> createQuiz(String category, int numQ, String title) {
 
         List<Integer> questions = quizInterface.getQuestionForQuiz(category,numQ).getBody();

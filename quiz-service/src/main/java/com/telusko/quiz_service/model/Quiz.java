@@ -23,7 +23,6 @@ public class Quiz {
         this.questionIds = questionIds;
     }
 
-//    @ManyToMany
     @ElementCollection
     private List<Integer> questionIds;
 
@@ -43,11 +42,12 @@ public class Quiz {
         this.title = title;
     }
 
-//    public List<Integer> getQuestions() {
-//        return questionIds;
-//    }
-//
-//    public void setQuestions(List<Integer> questions) {
-//        this.questionIds = questions;
-//    }
+    public List<Integer> getQuestions() {
+        return questionIds;
+    }
+
+    public void setQuestions(List<Integer> questions) {
+        this.questionIds = questions;
+    }
+
 }

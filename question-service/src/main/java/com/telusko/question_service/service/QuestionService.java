@@ -77,21 +77,6 @@ public class QuestionService {
         return new ResponseEntity<> ( wrappers,HttpStatus.OK );
     }
 
-//    public ResponseEntity<Integer> getScore(List<Response> responses) {
-//
-//        int right = 0;
-//
-//        for(Response response : responses){
-//            Question question;
-//
-//            question = questionDao.findById ( response.getId ().get() );
-//
-//            if(response.getResponse().equals(question.getCorrectAnswer ())
-//                right++;
-//        }
-//        return new ResponseEntity<>(right, HttpStatus.OK);
-//
-//    }
 
     public ResponseEntity<Integer> getScore(List<Response> responses) {
         int right = 0;
@@ -99,9 +84,9 @@ public class QuestionService {
         for (Response response : responses) {
             Optional<Question> optionalQuestion = questionDao.findById(response.getId());
 
-            if (optionalQuestion.isPresent()) { // Ensure question exists
+            if (optionalQuestion.isPresent()) {
                 Question question = optionalQuestion.get();
-                if (response.getResponse().equals(question.getCorrectAnswer())) { // Corrected if condition
+                if (response.getResponse().equals(question.getCorrectAnswer())) {
                     right++;
                 }
             }
