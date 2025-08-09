@@ -18,7 +18,7 @@ The system consists of **four independent microservices**:
 
 2. **Question Service**
 
-   * **Port**: `8081` (example)
+   * **Port**: `8080` (example)
    * **Database**: `questionDB`
    * **Responsibilities**:
 
@@ -29,7 +29,7 @@ The system consists of **four independent microservices**:
 
 3. **Quiz Service**
 
-   * **Port**: `8082` (example)
+   * **Port**: `8090` (example)
    * **Database**: `quizDB`
    * **Communication**: Uses `FeignClient` to call **Question Service**
    * **Responsibilities**:
@@ -90,7 +90,7 @@ CREATE DATABASE quizDB;
 #### Question Service (`question-service/src/main/resources/application.properties`)
 
 ```properties
-server.port=8081
+server.port=8080
 spring.datasource.url=jdbc:mysql://localhost:3306/questionDB
 spring.datasource.username=YOUR_USERNAME
 spring.datasource.password=YOUR_PASSWORD
@@ -103,7 +103,7 @@ eureka.client.service-url.defaultZone=http://localhost:8761/eureka
 #### Quiz Service (`quiz-service/src/main/resources/application.properties`)
 
 ```properties
-server.port=8082
+server.port=8090
 spring.datasource.url=jdbc:mysql://localhost:3306/quizDB
 spring.datasource.username=YOUR_USERNAME
 spring.datasource.password=YOUR_PASSWORD
@@ -174,6 +174,16 @@ mvn spring-boot:run
 
 ---
 
+## 📷  ScreenShot
+<img width="1919" height="1015" alt="image" src="https://github.com/user-attachments/assets/1530cd1d-c176-4437-a283-2c99f8683678" />
+<img width="1901" height="978" alt="image" src="https://github.com/user-attachments/assets/15cf83fe-2e5d-48b2-b3c8-d9f6d531821b" />
+<img width="1915" height="990" alt="image" src="https://github.com/user-attachments/assets/a3416075-1873-4006-9962-eaaf3ffdce17" />
+<img width="1919" height="1005" alt="image" src="https://github.com/user-attachments/assets/942fca42-0c23-4299-9f97-a0b2b8a89b97" />
+<img width="1919" height="1003" alt="image" src="https://github.com/user-attachments/assets/bbcad103-4988-4647-bf87-2461f3d07b84" />
+<img width="1918" height="999" alt="image" src="https://github.com/user-attachments/assets/b814ac5c-7e2d-4a21-bd65-d8ad0b04fb32" />
+
+---
+
 ## Author
 
 * **Mohd Saqib**
@@ -183,4 +193,3 @@ mvn spring-boot:run
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
